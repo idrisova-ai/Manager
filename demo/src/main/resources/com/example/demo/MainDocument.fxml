@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="902.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.MainDocumentController">
+   <children>
+      <AnchorPane prefHeight="600.0" prefWidth="958.0">
+         <children>
+            <BorderPane layoutX="39.0" layoutY="107.0" prefHeight="600.0" prefWidth="1100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <left>
+                  <AnchorPane prefHeight="600.0" prefWidth="222.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane layoutX="11.0" layoutY="149.0" prefHeight="600.0" prefWidth="222.0" styleClass="nav-form" stylesheets="@style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="11.0" layoutY="129.0" prefHeight="87.0" prefWidth="222.0" styleClass="header" stylesheets="@style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <Label layoutX="39.0" layoutY="33.0" stylesheets="@style.css" text="Менеджер рецептов" textFill="WHITE">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                              <Button fx:id="all_recBtn" layoutX="6.0" layoutY="123.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="40.0" prefWidth="208.0" styleClass="nav-btn" stylesheets="@style.css" text="Все рецепты" />
+                              <Button fx:id="add_recBtn" layoutX="6.0" layoutY="180.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="40.0" prefWidth="208.0" styleClass="nav-btn" stylesheets="@style.css" text="Добавить рецепт" />
+                              <Button fx:id="fav_recBtn" layoutX="6.0" layoutY="236.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="40.0" prefWidth="208.0" styleClass="nav-btn" stylesheets="@style.css" text="Избранное" />
+                              <Button fx:id="cart_recBtn" layoutX="6.0" layoutY="300.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="40.0" prefWidth="207.0" styleClass="nav-btn" stylesheets="@style.css" text="Корзина" />
+                              <ComboBox fx:id="sort" layoutX="24.0" layoutY="402.0" prefHeight="26.0" prefWidth="171.0" promptText="Выберите категорию..." AnchorPane.bottomAnchor="171.60000000000002" />
+                              <Label layoutX="58.0" layoutY="382.0" text="Сортировать по:" textFill="WHITE" AnchorPane.bottomAnchor="198.0">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="sort_Btn" layoutX="36.0" layoutY="446.0" mnemonicParsing="false" onAction="#sortBtn" prefHeight="26.0" prefWidth="148.0" styleClass="nav-btn" stylesheets="@style.css" text="Отсортировать" AnchorPane.bottomAnchor="129.20000000000002" AnchorPane.leftAnchor="36.0" AnchorPane.rightAnchor="38.400000000000006" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </left>
+               <center>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" stylesheets="@style.css" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane fx:id="all_form" prefHeight="600.0" prefWidth="624.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <ScrollPane fx:id="menu_scrollPane" layoutY="52.0" prefHeight="543.0" prefWidth="677.0" AnchorPane.bottomAnchor="6.399999999999977" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="5.600000000000023" AnchorPane.topAnchor="52.0">
+                                 <content>
+                                    <GridPane fx:id="menu_gridPane" prefHeight="538.0" prefWidth="675.0">
+                                      <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                    </GridPane>
+                                 </content>
+                              </ScrollPane>
+                              <Label layoutX="14.0" layoutY="27.0" text="Все рецепты" AnchorPane.topAnchor="27.0">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="fav_form" layoutX="132.0" layoutY="59.0" prefHeight="600.0" prefWidth="620.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <ScrollPane fx:id="fav_scrollPane" layoutX="7.0" layoutY="72.0" prefHeight="522.0" prefWidth="667.0" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="72.0">
+                                 <content>
+                                    <GridPane fx:id="fav_gridPane" prefHeight="511.0" prefWidth="665.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                    </GridPane>
+                                 </content>
+                              </ScrollPane>
+                              <Label layoutX="14.0" layoutY="39.0" text="Избранные рецепты" AnchorPane.topAnchor="39.0">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="add_form" layoutX="124.0" layoutY="213.0" prefHeight="600.0" prefWidth="680.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane fx:id="add_table" layoutX="26.0" layoutY="14.0" prefHeight="307.0" prefWidth="642.0" stylesheets="@style.css" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="14.0">
+                                 <children>
+                                    <TableView fx:id="add_tableView" layoutX="20.0" layoutY="14.0" onMouseClicked="#addSelectOrder" prefHeight="288.0" prefWidth="609.0" styleClass="table" stylesheets="@style.css" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="14.0">
+                                      <columns>
+                                        <TableColumn fx:id="add_col_prodId" prefWidth="75.0" text="Номер" />
+                                        <TableColumn fx:id="add_col_prodName" prefWidth="106.20001983642578" text="Название" />
+                                          <TableColumn fx:id="add_col_type" prefWidth="106.20001983642578" text="Категория" />
+                                          <TableColumn fx:id="add_col_time" prefWidth="106.20001983642578" text="Время" />
+                                          <TableColumn fx:id="add_col_bju" prefWidth="106.20001983642578" text="Каллории" />
+                                          <TableColumn fx:id="add_col_difficulty" prefWidth="106.20001983642578" text="Сложность" />
+                                      </columns>
+                                       <columnResizePolicy>
+                                          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                       </columnResizePolicy>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane fx:id="add_rec" layoutX="26.0" layoutY="311.0" prefHeight="273.0" prefWidth="642.0" styleClass="p-bg" stylesheets="@style.css" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="15.0">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="26.0" prefHeight="18.0" prefWidth="60.0" text="Номер:" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="26.0" />
+                                    <TextField fx:id="add_prodID" layoutX="96.0" layoutY="22.0" prefHeight="26.0" prefWidth="132.0" AnchorPane.leftAnchor="96.0" AnchorPane.topAnchor="22.0" />
+                                    <Label layoutX="14.0" layoutY="65.0" prefHeight="18.0" prefWidth="60.0" text="Название:" />
+                                    <TextField fx:id="add_prodName" layoutX="95.0" layoutY="60.0" prefHeight="26.0" prefWidth="133.0" />
+                                    <Label layoutX="14.0" layoutY="107.0" prefHeight="18.0" prefWidth="66.0" text="Категория:" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="107.0" />
+                                    <ComboBox fx:id="add_type" layoutX="95.0" layoutY="103.0" prefHeight="26.0" prefWidth="134.0" promptText="Выберите категорию" AnchorPane.leftAnchor="95.0" AnchorPane.topAnchor="103.0" />
+                                    <Label layoutX="246.0" layoutY="26.0" prefHeight="18.0" prefWidth="46.0" text="Время:" AnchorPane.rightAnchor="346.6" AnchorPane.topAnchor="26.0" />
+                                    <TextField fx:id="add_time" layoutX="322.0" layoutY="22.0" prefHeight="26.0" prefWidth="106.0" promptText="0" AnchorPane.rightAnchor="213.20000000000002" AnchorPane.topAnchor="22.0" />
+                                    <Label layoutX="246.0" layoutY="64.0" prefHeight="18.0" prefWidth="68.0" text="Каллории:" AnchorPane.rightAnchor="325.0" AnchorPane.topAnchor="64.0" />
+                                    <TextField fx:id="add_bju" layoutX="321.0" layoutY="59.0" prefHeight="26.0" prefWidth="107.0" promptText="0.0" AnchorPane.rightAnchor="213.40000000000003" AnchorPane.topAnchor="59.0" />
+                                    <Button fx:id="add_imageBtn" layoutX="532.0" layoutY="140.0" mnemonicParsing="false" onAction="#addImageBtn" prefHeight="42.0" prefWidth="157.0" styleClass="btn-add" stylesheets="@style.css" text="Добавить фото" AnchorPane.bottomAnchor="95.0" AnchorPane.rightAnchor="9.0" />
+                                    <Button fx:id="add_prodBtn" layoutX="8.0" layoutY="193.0" mnemonicParsing="false" onAction="#addAddBtn" prefHeight="40.0" prefWidth="108.0" styleClass="btn" stylesheets="@style.css" text="Добавить" AnchorPane.bottomAnchor="41.0" AnchorPane.leftAnchor="8.0" />
+                                    <Button fx:id="add_importBtn" layoutX="127.0" layoutY="193.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="99.0" styleClass="btn" stylesheets="@style.css" text="Импорт" AnchorPane.bottomAnchor="41.0" AnchorPane.leftAnchor="127.0" />
+                                    <Button fx:id="add_changeBtn" layoutX="246.0" layoutY="193.0" mnemonicParsing="false" onAction="#addChangeBtn" prefHeight="40.0" prefWidth="107.0" styleClass="btn" stylesheets="@style.css" text="Изменить" AnchorPane.bottomAnchor="41.0" />
+                                    <Button fx:id="add_removeBtn" layoutX="366.80000000000007" layoutY="192.20000000000005" mnemonicParsing="false" onAction="#addRemoveBtn" prefHeight="40.0" prefWidth="86.0" styleClass="btn-del" stylesheets="@style.css" text="Удалить" AnchorPane.bottomAnchor="41.39999999999998" AnchorPane.rightAnchor="189.0" />
+                                    <Label alignment="CENTER" layoutX="243.0" layoutY="101.0" prefHeight="26.0" prefWidth="74.0" text="Сложность:" AnchorPane.rightAnchor="321.6" AnchorPane.topAnchor="101.0" />
+                                    <ComboBox fx:id="add_difficulty" layoutX="326.0" layoutY="101.0" prefHeight="26.0" prefWidth="108.0" promptText="Выберите сложность" AnchorPane.rightAnchor="207.60000000000002" AnchorPane.topAnchor="101.0" />
+                                    <Button fx:id="add_ingrBtn" layoutX="63.0" layoutY="146.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="213.0" styleClass="btn-add" stylesheets="@style.css" text="Добавить ингредиенты" AnchorPane.bottomAnchor="98.0" AnchorPane.leftAnchor="40.0" />
+                                    <Button fx:id="add_stepBtn" layoutX="285.0" layoutY="145.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="143.0" styleClass="btn-add" stylesheets="@style.css" text="Добавить шаги" AnchorPane.bottomAnchor="98.0" AnchorPane.leftAnchor="285.0" />
+                                    <Button fx:id="add_openBtn" layoutX="471.6" layoutY="193.0" mnemonicParsing="false" onAction="#addHandleButtonAction" prefHeight="40.0" prefWidth="154.0" styleClass="btn" stylesheets="@style.css" text="Открыть рецепт" AnchorPane.rightAnchor="16.200000000000045" />
+                                    <ImageView fx:id="add_imageView" fitHeight="117.0" fitWidth="172.0" layoutX="454.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true" styleClass="p-bg" AnchorPane.rightAnchor="15.600000000000023" AnchorPane.topAnchor="16.0" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="cart_form" layoutX="48.0" layoutY="27.0" prefHeight="600.0" prefWidth="680.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane fx:id="cart_rec" layoutX="32.0" layoutY="16.0" prefHeight="567.0" prefWidth="616.0" stylesheets="@style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="radius" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <children>
+                                    <TableView fx:id="cart_tableView" layoutX="14.0" layoutY="14.0" onMouseClicked="#cartSelectOrder" prefHeight="282.0" prefWidth="589.0" AnchorPane.bottomAnchor="271.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="14.0">
+                                      <columns>
+                                          <TableColumn fx:id="cart_col_prodId" prefWidth="106.20001220703125" text="Номер" />
+                                        <TableColumn fx:id="cart_col_prodName" prefWidth="106.20001220703125" text="Название" />
+                                        <TableColumn fx:id="cart_col_type" prefWidth="85.800048828125" text="Категория" />
+                                          <TableColumn fx:id="cart_col_bju" prefWidth="85.800048828125" text="Каллории" />
+                                          <TableColumn fx:id="cart_col_quantity" prefWidth="106.20001220703125" text="Количество" />
+                                      </columns>
+                                       <columnResizePolicy>
+                                          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                       </columnResizePolicy>
+                                    </TableView>
+                                    <Button fx:id="cart_payBtn" layoutX="33.0" layoutY="416.0" mnemonicParsing="false" onAction="#cartPayBtn" prefHeight="102.0" prefWidth="627.0" styleClass="btn-add" stylesheets="@style.css" text="Оформить покупку" AnchorPane.bottomAnchor="116.0" AnchorPane.leftAnchor="33.0" AnchorPane.rightAnchor="23.0">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font></Button>
+                                    <Button fx:id="cart_openBtn" layoutX="33.0" layoutY="510.0" mnemonicParsing="false" onAction="#cartHandleButtonAction" prefHeight="48.0" prefWidth="272.0" styleClass="btn" stylesheets="@style.css" text="Открыть" AnchorPane.bottomAnchor="44.0" AnchorPane.leftAnchor="33.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font></Button>
+                                    <Button fx:id="cart_removeBtn" layoutX="385.0" layoutY="510.0" mnemonicParsing="false" onAction="#cartRemoveBtn" prefHeight="48.0" prefWidth="284.0" stylesheets="@style.css" text="Удалить" AnchorPane.bottomAnchor="44.0" AnchorPane.rightAnchor="14.0">
+                                       <styleClass>
+                                          <String fx:value="btn" />
+                                          <String fx:value="btn-del" />
+                                       </styleClass>
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font></Button>
+                                 </children>
+                              </AnchorPane>
+                           </children></AnchorPane>
+                     </children></AnchorPane>
+               </center>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

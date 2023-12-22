@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="favCard_form" prefHeight="277.0" prefWidth="331.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.cardFavController">
+    <children>
+      <AnchorPane layoutX="8.0" layoutY="9.0" prefHeight="244.0" prefWidth="315.0" stylesheets="@style.css">
+         <styleClass>
+            <String fx:value="p-bg" />
+            <String fx:value="shadow" />
+         </styleClass>
+      </AnchorPane>
+        <VBox prefHeight="147.0" prefWidth="311.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+        <Button fx:id="fav_removeBtn" alignment="CENTER" layoutX="146.0" layoutY="214.0" mnemonicParsing="false" onAction="#favRemoveBtn" prefHeight="30.0" prefWidth="173.0" styleClass="btn-del" stylesheets="@style.css" text="Удалить из избранного" />
+        <Label layoutX="23.0" layoutY="189.0" text="Сложность:" />
+        <Label fx:id="prod_name" layoutX="14.0" layoutY="166.0" prefHeight="18.0" prefWidth="242.0" />
+        <Label fx:id="prod_difficulty" layoutX="89.0" layoutY="189.0" prefHeight="18.0" prefWidth="95.0" />
+      <Button fx:id="fav_openBtn" alignment="CENTER" layoutX="12.0" layoutY="214.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="30.0" prefWidth="126.0" styleClass="btn-add" stylesheets="@style.css" text="Открыть" />
+      <AnchorPane layoutX="16.0" layoutY="21.0" prefHeight="147.0" prefWidth="293.0">
+         <children>
+            <ImageView fx:id="fav_imageView" fitHeight="133.0" fitWidth="225.0" layoutX="38.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true" />
+         </children></AnchorPane>
+    </children>
+    <styleClass>
+        <String fx:value="radius" />
+        <String fx:value="shadow" />
+    </styleClass>
+</AnchorPane>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="prodCard_form" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="273.0" prefWidth="278.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.cardProductController">
+   <children>
+      <AnchorPane layoutX="7.0" layoutY="12.0" prefHeight="250.0" prefWidth="262.0" stylesheets="@style.css">
+         <styleClass>
+            <String fx:value="p-bg" />
+            <String fx:value="shadow" />
+         </styleClass></AnchorPane>
+      <VBox layoutX="57.0" layoutY="-20.0" prefHeight="180.0" prefWidth="230.0" stylesheets="@style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="54.0" prefWidth="259.0" stylesheets="@style.css">
+               <children>
+                  <Label fx:id="prod_name" prefHeight="35.0" prefWidth="162.0" text="Название рецепта">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label fx:id="prod_difficulty" prefHeight="19.0" prefWidth="76.0" text="Сложность">
+                     <padding>
+                        <Insets right="5.0" />
+                     </padding>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+            <AnchorPane prefHeight="118.0" prefWidth="308.0" stylesheets="@style.css">
+               <children>
+                  <ImageView fx:id="prod_imageView" fitHeight="108.0" fitWidth="223.0" layoutX="18.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+               <styleClass>
+                  <String fx:value="white-bg" />
+                  <String fx:value="radius" />
+                  <String fx:value="shadow" />
+               </styleClass>
+            </AnchorPane>
+            <HBox alignment="CENTER" prefHeight="40.0" prefWidth="230.0">
+               <children>
+                  <Spinner fx:id="prod_spinner" prefHeight="26.0" prefWidth="64.0">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Spinner>
+                  <Button fx:id="cart_addBtn" mnemonicParsing="false" onAction="#cartAddBtn" prefHeight="30.0" prefWidth="155.0" styleClass="btn" stylesheets="@style.css" text="Добавить в корзину" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="12.0" prefWidth="230.0">
+               <children>
+                  <Button fx:id="prod_openBtn" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="30.0" prefWidth="77.0" styleClass="btn" stylesheets="@style.css" text="Открыть" />
+                  <Button fx:id="fav_addBtn" layoutX="58.0" layoutY="10.0" mnemonicParsing="false" onAction="#favAddBtn" prefHeight="27.0" prefWidth="160.0" styleClass="btn-add" stylesheets="@style.css" text="Добавить в избранное">
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin></Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
